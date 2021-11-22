@@ -1,6 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Andres Uriza
+ * @author Daniel Castro
+ * @author Ricardo Borbon
+ * @author Jose Pablo Esquetini
+ * 
+ * This class
+ */
 public class Interfaz {
     // Atributos de la clase - Aquí están los principales componentes de la interfaz
     JFrame root;
@@ -10,6 +18,9 @@ public class Interfaz {
     JButton[] botonesLugar = new JButton[15];
     JButton[] botonesVolver = new JButton[15];
 
+    /**
+     * Constructor method
+     */
     public Interfaz(){
         root = new JFrame();
         //-----------------------------------------
@@ -105,6 +116,12 @@ public class Interfaz {
         //------------------------------------------
     }
 
+    /**
+     * Method that changes JPanel
+     * 
+     * @param primerPanel
+     * @param segundoPanel
+     */
     public void cambiarPanel(JPanel primerPanel, JPanel segundoPanel){
         primerPanel.setVisible(false);
         segundoPanel.setVisible(true);
