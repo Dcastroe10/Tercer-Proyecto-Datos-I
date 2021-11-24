@@ -4,7 +4,7 @@
  * @author Ricardo Borbon
  * @author Jose Pablo Esquetini
  * 
- * This class
+ * This class executes the Interfaz class
  */
 public class Main {
     public static void main(String[] args) {
