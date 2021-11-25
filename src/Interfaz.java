@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 /**
  * @author Andres Uriza
@@ -11,14 +12,17 @@ import java.awt.*;
  */
 public class Interfaz {
     // Atributos de la clase - Aquí están los principales componentes de la interfaz
-    JFrame root;
-    JPanel panelInicio;
-    JPanel panelNavegacion;
-    JPanel[] lugares = new JPanel[15];
-    JButton[] botonesLugar = new JButton[15];
-    JButton[] botonesVolver = new JButton[15];
-    Font title = new Font("Arial", Font.BOLD, 40);
-    Font paragraph = new Font("Arial", Font.PLAIN, 16);
+    private JFrame root;
+    private JPanel panelInicio;
+    private JPanel panelNavegacion;
+    private JPanel[] lugares = new JPanel[15];
+    private JButton[] botonesLugar = new JButton[15];
+    private JButton[] botonesVolver = new JButton[15];
+    private Font title = new Font("Arial", Font.BOLD, 40);
+    private Font paragraph = new Font("Arial", Font.PLAIN, 16);
+    private JTextField from_field = new JTextField("Ex: San Jose");
+    private JTextField goto_field = new JTextField("Ex: Turrialba");
+    private JTextField delays_field = new JTextField("In minutes, Ex: 10");
 
     /**
      * Constructor method
@@ -357,15 +361,13 @@ public class Interfaz {
         JLabel delays = new JLabel("Delays?");
         delays.setBounds(600, 0, 100, 100);
 
-        JTextField from_field = new JTextField("Ex: San Jose");
         from_field.setBounds(30, 80, 200, 30);
-        JTextField goto_field = new JTextField("Ex: Turrialba");
         goto_field.setBounds(280, 80, 200, 30);
-        JTextField delays_field = new JTextField("In minutes, Ex: 10");
         delays_field.setBounds(580, 80, 200, 30);
 
         JButton go = new JButton("Let's go");
         go.setBounds(850,50,100,50);
+        go.addActionListener(e -> {calculate_travel();});
 
         travel_plan.add(from);
         travel_plan.add(from_field);
@@ -380,6 +382,7 @@ public class Interfaz {
         panelNavegacion.add(travel_plan);
 
         panelNavegacion.setVisible(false);
+
 
 
         // Final del Panel de Navegación
@@ -403,6 +406,11 @@ public class Interfaz {
         root.setVisible(true); // Mostrar la Ventana
         // Final del Frame Principal
         //------------------------------------------
+    }
+
+    public void calculate_travel() {
+        String[] information = {from_field.getText(), goto_field.getText()};
+        JOptionPane.showInternalMessageDialog(null, "It should take you " + "to arrive to " + information[1] + " from " + information[0], "test", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
