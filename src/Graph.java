@@ -46,7 +46,6 @@ public class Graph {
         grafo.agregar("Escazú", 11, "Cartago",12,99);
         grafo.agregar("Cartago", 12, "Turrialba",13,99);
         grafo.agregar("Turrialba", 13, "Limón",14,99);
-
          */
 
         //__________________________________________________________________________________________
@@ -63,17 +62,13 @@ public class Graph {
         grafo.agregar("Heredia", 9, "Cartago",12,99);
         grafo.agregar("Heredia", 9, "Turrialba",13,99);
         grafo.agregar("Turrialba", 13, "Limón",14,99);
-        grafo.agregar("Cartago", 12, "Puntarena???",3,99);//!!!!!!!!!!!!!!!
-        grafo.agregar("Parrita", 15, "Puntarena???",    3,99);
+        grafo.agregar("Cartago", 12, "Parrita",3,99);
+        grafo.agregar("Parrita", 15, "Parrita",    3,99);
 
 
 
 
-
-
-
-
-        int ciudad = 16;
+        int ciudad = 6;
         List<Paths> lista = grafo.get_graph(ciudad);
         for (Paths camino:lista){
             if (camino.getCity1_index() == ciudad){
