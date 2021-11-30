@@ -18,8 +18,10 @@ public class Interfaz {
     private JPanel[] lugares = new JPanel[15];
     private JButton[] botonesLugar = new JButton[15];
     private JButton[] botonesVolver = new JButton[15];
-    private Font title = new Font("Arial", Font.BOLD, 40);
-    private Font paragraph = new Font("Arial", Font.PLAIN, 16);
+    private Font title = new Font("Cambria", Font.BOLD, 40);
+    private Font paragraph = new Font("Cambria", Font.PLAIN, 22);
+    private Font titlesFont = new Font("Cambria", Font.BOLD, 30);
+    private Font buttonsFont = new Font("Cambria", Font.BOLD, 18);
     private JTextField from_field = new JTextField("Ex: San Jose");
     private JTextField goto_field = new JTextField("Ex: Turrialba");
     private JTextField delays_field = new JTextField("In minutes, Ex: 10");
@@ -28,7 +30,9 @@ public class Interfaz {
      * Constructor method
      */
     public Interfaz(){
+        // Creation of the main frame
         root = new JFrame();
+
         //-----------------------------------------
         // Creación del Panel que recibe al usuario
         panelInicio = new JPanel();
@@ -85,8 +89,9 @@ public class Interfaz {
             lugares[i].add(botonesVolver[i]);
             botonesLugar[i] = new JButton();
             botonesLugar[i].setBounds(buttonCordX, buttonCordY, 185, 40);
+            botonesLugar[i].setFont(buttonsFont);
             panelNavegacionLugar.add(botonesLugar[i]);
-            buttonCordY += 45;
+            buttonCordY += 50;
         }
         
         JLabel upala = new JLabel("Upala");
@@ -94,7 +99,7 @@ public class Interfaz {
         upala.setBounds(400,0,900,100);
         JTextArea upala_info = new JTextArea("43,953 live here!\nYou can visit the Parque Central and Rincon Verde Hotel here!\nYou can eat at El Fogon and Harleys Burger!\nNearby gas stations are Gasolinera Upala and JSM Upala");
         upala_info.setFont(paragraph);
-        upala_info.setBounds(40,150,900,100);
+        upala_info.setBounds(40,150,900,120);
         JLabel picture_label0 = new JLabel();
         picture_label0.setBounds(50,310,900,500);
         ImageIcon picture0 = new ImageIcon("imagenes/upala.png");
@@ -109,7 +114,7 @@ public class Interfaz {
         liberia.setBounds(400,0,900,100);
         JTextArea liberia_info = new JTextArea("53,382 live here!\nYou can visit the Museo de Guanacaste and Catedral de la Inmaculada Concepcion!\nYou can eat at Cielito Lindo Liberia and Restaurante Terrazas!\nNearby gas stations are Estacion De Servicio Ciudad Blanca and Estacion de Gasolina Full");
         liberia_info.setFont(paragraph);
-        liberia_info.setBounds(40,150,900,100);
+        liberia_info.setBounds(40,150,900,120);
         JLabel picture_label1 = new JLabel();
         picture_label1.setBounds(50,310,900,500);
         ImageIcon picture1 = new ImageIcon("imagenes/liberia.png");
@@ -124,7 +129,7 @@ public class Interfaz {
         quesada.setBounds(400,0,900,100);
         JTextArea quesada_info = new JTextArea("42,060 live here!\nYou can visit the Parque de Ciudad Quesada and Volcan Platanar!\nYou can eat at Julio’s Grill and Soda Punto del sabor!\nNearby gas stations are Estacion de Servicio LOYVA and Delta Ciudad Quesada");
         quesada_info.setFont(paragraph);
-        quesada_info.setBounds(40,150,900,100);
+        quesada_info.setBounds(40,150,900,120);
         JLabel picture_label2 = new JLabel();
         picture_label2.setBounds(50,310,900,500);
         ImageIcon picture2 = new ImageIcon("imagenes/quesada.png");
@@ -139,7 +144,7 @@ public class Interfaz {
         alajuela.setBounds(400,0,900,100);
         JTextArea alajuela_info = new JTextArea("42,975 live here!\nYou can visit the Museo Historico Cultural Juan Santamaria and the Monument of Tomas Guardia!\nYou can eat at Pesqueria da Limonta and Miski Peru!\nNearby gas stations are Santa Anita Ala Gas and Delta Alajuela");
         alajuela_info.setFont(paragraph);
-        alajuela_info.setBounds(40,150,900,100);
+        alajuela_info.setBounds(40,150,900,120);
         JLabel picture_label3 = new JLabel();
         picture_label3.setBounds(50,310,900,500);
         ImageIcon picture3 = new ImageIcon("imagenes/alajuela.png");
@@ -154,7 +159,7 @@ public class Interfaz {
         heredia.setBounds(400,0,900,100);
         JTextArea heredia_info = new JTextArea("18,697 live here!\nYou can visit the Fortin and Palacio de los Deportes!\nYou can eat at La Candelaria and Estadero Bistro & Cafe!\nNearby gas stations are Llantera el Pana and Total Gas Station");
         heredia_info.setFont(paragraph);
-        heredia_info.setBounds(40,150,900,100);
+        heredia_info.setBounds(40,150,900,120);
         JLabel picture_label4 = new JLabel();
         picture_label4.setBounds(50,310,900,500);
         ImageIcon picture4 = new ImageIcon("imagenes/heredia.png");
@@ -169,7 +174,7 @@ public class Interfaz {
         santa_cruz.setBounds(400,0,900,100);
         JTextArea santa_cruz_info = new JTextArea("21,544 live here!\nYou can visit the Parque Bernabela Ramos and Parque Nacional Diria!\nYou can eat at Restaurante D’Leo Santa Cruz and El Marino Real!\nNearby gas stations are Gascentro Santa Cruz and Gasolinera JSM");
         santa_cruz_info.setFont(paragraph);
-        santa_cruz_info.setBounds(40,150,900,100);
+        santa_cruz_info.setBounds(40,150,900,120);
         JLabel picture_label5 = new JLabel();
         picture_label5.setBounds(50,310,900,500);
         ImageIcon picture5 = new ImageIcon("imagenes/santa_cruz.png");
@@ -184,7 +189,7 @@ public class Interfaz {
         palmares.setBounds(400,0,900,100);
         JTextArea palmares_info = new JTextArea("3,599 live here!\nYou can visit the Parroquia Nuestra Senora de Las Mercedes and Parque Simon Ruiz Elizondo!\nYou can eat at Restaurante El Hidalgo and La Pataquena!\nNearby gas stations are Servicentro La Bomba Tres Puentes and Servicentro A.V. Palmares");
         palmares_info.setFont(paragraph);
-        palmares_info.setBounds(40,150,900,100);
+        palmares_info.setBounds(40,150,900,120);
         JLabel picture_label6 = new JLabel();
         picture_label6.setBounds(50,310,900,500);
         ImageIcon picture6 = new ImageIcon("imagenes/palmares.png");
@@ -199,7 +204,7 @@ public class Interfaz {
         limon.setBounds(400,0,900,100);
         JTextArea limon_info = new JTextArea("61,072 live here!\nYou can visit the Playa Bonita and Vargas Park!\nYou can eat at Restaurante Kalisi and Maestros Wine & Grill!\nNearby gas stations are Guapiles El Progreso and Total");
         limon_info.setFont(paragraph);
-        limon_info.setBounds(40,150,900,100);
+        limon_info.setBounds(40,150,900,120);
         JLabel picture_label7 = new JLabel();
         picture_label7.setBounds(50,310,900,500);
         ImageIcon picture7 = new ImageIcon("imagenes/limon.png");
@@ -214,7 +219,7 @@ public class Interfaz {
         san_jose.setBounds(400,0,900,100);
         JTextArea san_jose_info = new JTextArea("342,188 live here!\nYou can visit the Museo Nacional de Costa Rica and Plaza de la Cultura!\nYou can eat at La 22 Gastronomia and Cafe Rojo!\nNearby gas stations are Gas LP and Servicentro Las Avenidas");
         san_jose_info.setFont(paragraph);
-        san_jose_info.setBounds(40,150,900,100);
+        san_jose_info.setBounds(40,150,900,120);
         JLabel picture_label8 = new JLabel();
         picture_label8.setBounds(50,310,900,500);
         ImageIcon picture8 = new ImageIcon("imagenes/san_jose.png");
@@ -229,7 +234,7 @@ public class Interfaz {
         cartago.setBounds(400,0,900,100);
         JTextArea cartago_info = new JTextArea("156,600 live here!\nYou can visit the Basilica de Nuestra Senora de los Angeles and Ruinas de Cartago!\nYou can eat at La Ventanita Criolla and Area 27 Street Food!\nNearby gas stations are Delta El Molino and Estacion de Servicio Los Angeles");
         cartago_info.setFont(paragraph);
-        cartago_info.setBounds(40,150,900,100);
+        cartago_info.setBounds(40,150,900,120);
         JLabel picture_label9 = new JLabel();
         picture_label9.setBounds(50,310,900,500);
         ImageIcon picture9 = new ImageIcon("imagenes/cartago.png");
@@ -244,7 +249,7 @@ public class Interfaz {
         turrialba.setBounds(400,0,900,100);
         JTextArea turrialba_info = new JTextArea("26,680 live here!\nYou can visit the Catarata La Muralla and Mirador de El Ceibo!\nYou can eat at Wok & Roll and El Sabor Turrialbeno!\nNearby gas stations are Estacion de Servicio TRANCARTAGI and Servicentro JSM");
         turrialba_info.setFont(paragraph);
-        turrialba_info.setBounds(40,150,900,100);
+        turrialba_info.setBounds(40,150,900,120);
         JLabel picture_label10 = new JLabel();
         picture_label10.setBounds(50,310,900,500);
         ImageIcon picture10 = new ImageIcon("imagenes/turrialba.png");
@@ -259,7 +264,7 @@ public class Interfaz {
         orotina.setBounds(400,0,900,100);
         JTextArea orotina_info = new JTextArea("9,664 live here!\nYou can visit the Choco Tour Costa Rica and Quinta Orotina!\nYou can eat at Marisqueria Placeres del Mar and La Hoja Verde!\nNearby gas stations are Centro de Servicio La Estacion De Jesus and Servicentro Demer");
         orotina_info.setFont(paragraph);
-        orotina_info.setBounds(40,150,900,100);
+        orotina_info.setBounds(40,150,900,120);
         JLabel picture_label11 = new JLabel();
         picture_label11.setBounds(50,310,900,500);
         ImageIcon picture11 = new ImageIcon("imagenes/orotina.png");
@@ -274,7 +279,7 @@ public class Interfaz {
         escazu.setBounds(400,0,900,100);
         JTextArea escazu_info = new JTextArea("11,984 live here!\nYou can visit the Mirador Valle Verde and Avenida Escazu!\nYou can eat at Budare’s Venezuelan Experience and The Pub!\nNearby gas stations are Delta San Rafael de Escazu and La Favorita y Gas Lp");        
         escazu_info.setFont(paragraph);
-        escazu_info.setBounds(40,150,900,100);
+        escazu_info.setBounds(40,150,900,120);
         JLabel picture_label12 = new JLabel();
         picture_label12.setBounds(50,310,900,500);
         ImageIcon picture12 = new ImageIcon("imagenes/escazu.png");
@@ -289,7 +294,7 @@ public class Interfaz {
         parrita.setBounds(400,0,900,100);
         JTextArea parrita_info = new JTextArea("16,115 live here!\nYou can visit the Pura Vida Tours & Transfers and Playa Palo Seco!\nYou can eat at AraVe and Soda Paya!\nNearby gas stations are Gasolinera Costanera Sur and Gasolinera Paquita");
         parrita_info.setFont(paragraph);
-        parrita_info.setBounds(40,150,900,100);
+        parrita_info.setBounds(40,150,900,120);
         JLabel picture_label13 = new JLabel();
         picture_label13.setBounds(50,310,900,500);
         ImageIcon picture13 = new ImageIcon("imagenes/parrita.png");
@@ -304,7 +309,7 @@ public class Interfaz {
         puntarenas.setBounds(400,0,900,100);
         JTextArea puntarenas_info = new JTextArea("410,929 live here!\nYou can visit the Faro de Puntarenas and Parque Marino del Pacifico!\nYou can eat at Josefina Restaurante & Cafe and Maes Grill!\nNearby gas stations are Delta Puntarenas and Trova Servicentro");
         puntarenas_info.setFont(paragraph);
-        puntarenas_info.setBounds(40,150,900,100);
+        puntarenas_info.setBounds(40,150,900,120);
         JLabel picture_label14 = new JLabel();
         picture_label14.setBounds(50,310,900,500);
         ImageIcon picture14 = new ImageIcon("imagenes/puntarenas.png");
@@ -346,7 +351,8 @@ public class Interfaz {
         botonesLugar[14].setText("Puntarenas");
 
         JLabel information = new JLabel("Information");
-        information.setBounds(70, -30, 100, 100);
+        information.setBounds(22, -26, 200, 100);
+        information.setFont(titlesFont);
         panelNavegacionLugar.add(information);
 
         JPanel travel_plan = new JPanel();
@@ -356,17 +362,21 @@ public class Interfaz {
 
         JLabel from = new JLabel("From:");
         from.setBounds(50, 0, 100, 100);
+        from.setFont(buttonsFont);
         JLabel go_to = new JLabel("Go to:");
         go_to.setBounds(300, 0, 100, 100);
+        go_to.setFont(buttonsFont);
         JLabel delays = new JLabel("Delays?");
         delays.setBounds(600, 0, 100, 100);
+        delays.setFont(buttonsFont);
 
         from_field.setBounds(30, 80, 200, 30);
         goto_field.setBounds(280, 80, 200, 30);
         delays_field.setBounds(580, 80, 200, 30);
 
         JButton go = new JButton("Let's go");
-        go.setBounds(850,50,100,50);
+        go.setBounds(850,50,120,65);
+        go.setFont(buttonsFont);
         go.addActionListener(e -> {calculate_travel();});
 
         travel_plan.add(from);
