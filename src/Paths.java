@@ -6,12 +6,13 @@ public class Paths {
     public int city2_index;
     public int weight;
 
-    public Paths(String city1,int posicion1, String city2, int posicion2, int weight) {
+    public Paths(String city1,int posicion1, String city2, int posicion2, double distance) {
         this.city1 = city1;
         this.city1_index = posicion1;
         this.city2 = city2;
         this.city2_index = posicion2;
-        this.weight = weight;
+        this.weight = (int)((distance / 80) * 60);
+        //System.out.println(this.weight);
     }
 
     public String decode_city (int index){

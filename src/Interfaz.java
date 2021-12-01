@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * 
  * This class
  */
-public class Interfaz {
+public class Interfaz{
     // Atributos de la clase - Aquí están los principales componentes de la interfaz
     private JFrame root;
     private JPanel panelInicio;
@@ -25,11 +25,16 @@ public class Interfaz {
     private JTextField from_field = new JTextField("Ex: San Jose");
     private JTextField goto_field = new JTextField("Ex: Turrialba");
     private JTextField delays_field = new JTextField("In minutes, Ex: 10");
+    private Graph grafo;
+    private String[] cities;
 
     /**
      * Constructor method
      */
-    public Interfaz(){
+    public Interfaz(Graph grafo, String[] cities){
+        this.grafo = grafo;
+        this.cities = cities;
+
         // Creation of the main frame
         root = new JFrame();
 
@@ -420,7 +425,30 @@ public class Interfaz {
 
     public void calculate_travel() {
         String[] information = {from_field.getText(), goto_field.getText()};
-        JOptionPane.showInternalMessageDialog(null, "It should take you " + "to arrive to " + information[1] + " from " + information[0], "test", JOptionPane.INFORMATION_MESSAGE);
+        int i = 0;
+        int length = this.cities.length;
+        int start = -1;
+        int finish = -1;
+        int[][] matrix = this.grafo.createGraph();
+        int delays = Integer.parseInt(delays_field.getText());
+        
+        while (i < length) {
+            if (start != -1 && finish != -1) {
+                break;
+            }
+            if (cities[i].equals(information[0])) {
+                start = i;
+            }
+            if (cities[i].equals(information[1])) {
+                finish = i;
+            }
+            i++;
+        }
+
+        int time = this.grafo.dijkstra(matrix, start, finish);
+        int totalTime = time + delays;
+
+        JOptionPane.showInternalMessageDialog(null, "It should take you " + time + " minutes plus " + delays + "minutes of delay, for a total of " + totalTime + " minutes to arrive to " + information[1] + " from " + information[0], "Pathfinder", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**

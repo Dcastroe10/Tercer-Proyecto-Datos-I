@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author Andres Uriza
@@ -27,10 +26,5 @@ public class Vertices {
 
     public List<Paths> getLista_de_paths() {
         return lista_paths;
-    }
-
-    public static void main(String[] args) {
-        ArrayList jeje = new ArrayList();
-
     }
 }
