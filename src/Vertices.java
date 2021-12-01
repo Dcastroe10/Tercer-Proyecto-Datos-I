@@ -7,6 +7,8 @@ import java.util.List;
  * @author Ricardo Borbon
  * @author Jose Pablo Esquetini
  *
+ * This class creates the nodes that form the graph
+ * 
  */
 public class Vertices {
     private  int identificador;

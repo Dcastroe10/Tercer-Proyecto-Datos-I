@@ -1,3 +1,13 @@
+/**
+ * @author Andres Uriza
+ * @author Daniel Castro
+ * @author Ricardo Borbon
+ * @author Jose Pablo Esquetini
+ *
+ * This class creates the paths that connects the nodes
+ * 
+ */
+
 public class Paths {
 
     public String city1;
@@ -12,7 +22,6 @@ public class Paths {
         this.city2 = city2;
         this.city2_index = posicion2;
         this.weight = (int)((distance / 80) * 60);
-        //System.out.println(this.weight);
     }
 
     public String decode_city (int index){

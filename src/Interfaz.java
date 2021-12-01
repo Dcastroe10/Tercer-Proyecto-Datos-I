@@ -32,6 +32,7 @@ public class Interfaz{
      * Constructor method
      */
     public Interfaz(Graph grafo, String[] cities){
+        // Informacion del grafo
         this.grafo = grafo;
         this.cities = cities;
 
